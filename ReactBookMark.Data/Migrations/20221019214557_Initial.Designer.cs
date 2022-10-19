@@ -9,8 +9,8 @@ using ReactBookMark.Data;
 namespace ReactBookMark.Data.Migrations
 {
     [DbContext(typeof(BookMarkDataContext))]
-    [Migration("20221019174351_initial")]
-    partial class initial
+    [Migration("20221019214557_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -22,8 +22,10 @@ namespace ReactBookMark.Data.Migrations
 
             modelBuilder.Entity("ReactBookMark.Data.BookMark", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");

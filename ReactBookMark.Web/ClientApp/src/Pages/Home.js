@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+
 
 const Home = () => {
     const [bookmarks, setBookmarks] = useState([]);
@@ -9,6 +9,8 @@ const Home = () => {
             const { data } = await axios.get('api/bookmark/populerbookmarks');
             setBookmarks(data);
         }
+        
+        getBookmarks();
     }, [])
     return (
         <>
@@ -25,7 +27,7 @@ const Home = () => {
                     {bookmarks.map((b, i) => {
                         return (
                             <tr key={i}>
-                                <td><Link to={{ pathname: `${b.url}` }} target="_blank">{b.url}</Link></td>
+                                <td><a href={b.url} target="_blank">{b.url}</a></td>
                                 <td>{b.count}</td>
                             </tr>
                         )

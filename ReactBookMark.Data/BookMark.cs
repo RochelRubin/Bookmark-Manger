@@ -6,7 +6,7 @@ namespace ReactBookMark.Data
 {
     public class BookMark
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public int UserId { get; set; }
         public string Title { get; set; }
         public string Url { get; set; }

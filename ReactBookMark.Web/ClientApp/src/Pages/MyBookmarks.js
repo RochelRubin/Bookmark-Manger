@@ -18,7 +18,7 @@ const MyBookmarks = () => {
         await axios.post('api/bookmark/deletebookmark', { ...bookmark })
         getBookmarks();
     }
-    const onUpdateClick = async (bookmark) => {
+    const onUpdateClick = async (id,title) => {
         await axios.post('api/bookmark/editbookmark', { id, title })
         getBookmarks();
     }

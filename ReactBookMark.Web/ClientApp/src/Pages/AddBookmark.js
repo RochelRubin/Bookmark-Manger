@@ -15,7 +15,7 @@ const AddBookmark = () => {
     const onFormSubmit = async e => {
         e.preventDefault();
         await axios.post('/api/bookmark/addbookmark', formData);
-        history.push('/mybookmarks');
+        history.push(`/mybookmarks`);
     }
 
     return (
